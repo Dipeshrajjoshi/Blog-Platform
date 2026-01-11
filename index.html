@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog Platform</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    /* Global Styles */
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f4f7f9;
+      color: #333;
+      margin: 0;
+      padding: 0 20px;
+    }
+
+    h1, h2, h3 {
+      color: #1f3c88;
+    }
+
+    button {
+      cursor: pointer;
+      padding: 6px 12px;
+      border: none;
+      border-radius: 5px;
+      background-color: #1f3c88;
+      color: #fff;
+      font-weight: 600;
+      transition: background 0.3s;
+    }
+    button:hover {
+      background-color: #3c5ac0;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 8px 10px;
+      margin: 5px 0 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+    }
+    textarea { resize: vertical; }
+
+    hr { margin: 30px 0; border: 0; border-top: 1px solid #ccc; }
+
+    /* Cards */
+    .post {
+      background: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+      margin-bottom: 20px;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .post:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+    }
+
+    .post h3 {
+      margin-top: 0;
+    }
+
+    .likes, .comment-btn {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .comment {
+      margin-left: 15px;
+      margin-top: 5px;
+      padding-left: 10px;
+      border-left: 2px solid #1f3c88;
+      font-size: 0.9em;
+      color: #555;
+    }
+
+    #auth {
+      max-width: 400px;
+      margin-bottom: 40px;
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      body { padding: 0 10px; }
+      .post { padding: 15px; }
+    }
+  </style>
+</head>
+<body>
+
+<h1>🌟 Blog Platform</h1>
+
+<div id="auth">
+  <h2>Register</h2>
+  <input type="text" id="regUsername" placeholder="Username">
+  <input type="email" id="regEmail" placeholder="Email">
+  <input type="password" id="regPassword" placeholder="Password">
+  <button onclick="register()">Register</button>
+
+  <h2>Login</h2>
+  <input type="text" id="loginUsername" placeholder="Username">
+  <input type="password" id="loginPassword" placeholder="Password">
+  <button onclick="login()">Login</button>
+</div>
+
+<hr>
+
+<h2>Latest Posts</h2>
+<div id="posts"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
